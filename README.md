@@ -151,18 +151,6 @@ Recommendations are not actions. Isolation, token revocation, and process termin
 
 Feedback, replay completions, and detection proposals are all recorded. The platform deliberately avoids “magic” model changes that cannot be explained later.
 
-## Production hardening roadmap
-
-This demo keeps infrastructure intentionally small. A production deployment would add:
-
-- Endpoint agents with signed enrollment, backpressure, local buffering, and clock-skew correction.
-- Kafka/Redpanda or a managed stream for event ingestion and replayable retention.
-- PostgreSQL/ClickHouse for incidents and analytical event queries; object storage for raw evidence.
-- A real feature store and independently monitored anomaly model with drift alerts.
-- OIDC/SAML, scoped tenant isolation, key rotation, immutable/WORM audit storage, and policy-as-code.
-- A sandboxed investigation agent with tool permissions, prompt-injection defenses, and citations to event IDs.
-- Signed detection packages, CI replay gates, kill switches, and staged rollout by endpoint cohort.
-
 ## Validation
 
 The repository includes tests for:
